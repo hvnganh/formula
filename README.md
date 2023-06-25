@@ -4,7 +4,7 @@ In the project directory, you can run:
 
 ### `npm install`
 
-### `npm start`
+### `npm dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
@@ -34,28 +34,11 @@ You may also see any lint errors in the console.
 │   │   ├── skeletons (Define Loading UI for specific component)
 │   │   │   ├── SkeletonsName
 |   │   │   │   ├── SkeletonsName
-│   │   ├── pages (Define components used in specific page)
-|   │   │   ├── PageName
-|   │   │   │   ├── **/*.css (Additional style)
-|   │   |   |   ├── hook (Custom hook to handle logic for components)
-|   |   |   |   |   ├── useComponents.ts (File handle logic for components)
-|   |   |   |   |   ├── constant.ts (Define constant which is used for this component)
-|   |   |   |   |   ├── helpers.ts (Define helper functions which is used for this component)
-|   │   |   |   ├── *.tsx (Component only contain UI state)
-|   │   |   |   ├── index.tsx
-│   ├── layout
-|   |   ├── LayoutName
-|   |   |   ├── hooks (folder constant file logics for components)
-|   |   |   |   |   ├── useLayoutName.ts (File handle logic for Layout)
-|   |   |   ├── index.tsx (Layout UI)
-|   |   ├── components (General component for all layouts)
-|   |   |   ├── ComponentName
-|   |   |   |   ├── index.tsx (Define export components)
+|   │   ├── layout
+|   |   |   ├── LayoutName
 |   |   |   |   ├── hooks (folder constant file logics for components)
-|   |   |   |   |   ├── useComponents.ts (File handle logic for components)
-|   |   |   |   |   ├── constant.ts (Define constant which is used for this component)
-|   |   |   |   |   ├── helpers.ts (Define helper functions which is used for this component)
-|   |   |   |   ├── ComponentName.tsx (Define UI of component)
+|   |   |   |   |   |   ├── useLayoutName.ts (File handle logic for Layout)
+|   |   |   |   ├── index.tsx (Layout UI)
 │   ├── lib
 |   │   ├── context (Define all context used in project)
 |   |   |   ├── ContextName.ts
@@ -63,15 +46,16 @@ You may also see any lint errors in the console.
 |   |   |   ├── useHookName.ts
 |   │   ├── utils (Define all utils function in project)
 |   |   |   ├── group
-|   |   |   |   ├── groupFunctionName.ts (File name should have to prefix(group) + Function name)
-|   │   ├── pages
-|   |   ├── _app.tsx (Custom App)
-|   |   ├── index.tsx (homepage)
-|   |   ├── 404.tsx (404 error page)
-|   |   ├── _document.tsx (Custom Document for SEO)
-|   |   ├── _document.tsx (Custom Document for SEO)
-│   ├── styles
-|   |   ├── globals.css (Declare global css here)
+|   |   |   |   ├── groupFunctionName.ts (Function name)
+│   ├── pages
+|   |   ├── index.tsx (HomePage)
+|   |   ├── group
+|   |   |   ├── groupPageName.ts (Define page's name)
+│   ├── types
+|   |   ├── global.d.ts (Define global type)
+│   ├── App.tsx (Custom route)
+│   ├── main.tsx (Custom App)
+│   ├── index.css (Custom global style)
 ├── public
 ├── package.json
 ├── yarn.json
