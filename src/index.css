@@ -7,11 +7,23 @@
         @apply tw-max-w-[1440px] tw-mx-auto tw-px-4
     }
 
+    .border-radius-top-right-corner {
+        border-top-right-radius: 6px;
+    }
+
     .side-bar__link {
         @apply tw-m-2 tw-p-4 tw-rounded-md tw-text-xl
     }
 
+    .side-bar__link:hover {
+        @apply tw-text-primary tw-transition-all tw-duration-300
+    }
+
     .side-bar__link-selected {
         @apply tw-text-primary tw-border tw-border-red-300
+    }
+
+    .card__border {
+        @apply tw-border-2 border-radius-top-right-corner tw-border-black tw-border-l-0 tw-border-b-0 tw-pt-4 tw-pr-4
     }
 }
