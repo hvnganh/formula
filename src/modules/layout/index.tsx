@@ -10,12 +10,12 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => (
   <div>
     <Header />
-    <main className="tw-h-[100vh] tw-pt-10">
+    <main className="tw-h-[80vh] tw-pt-10">
       <div className="components-wrapper tw-grid tw-grid-cols-12 tw-gap-4">
         <div className="tw-col-span-3">
           <SideBar />
         </div>
-        <div className="tw-col-span-9">
+        <div className="tw-col-span-9 tw-h-[80vh] tw-overflow-y-auto">
           {children}
         </div>
       </div>

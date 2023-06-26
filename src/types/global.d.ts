@@ -47,6 +47,7 @@ declare global {
             team: string;
         }>;
         listParagraph: Array<string>;
+        listYear: Array<string>;
     }
 
     type DriverDetailType = {
