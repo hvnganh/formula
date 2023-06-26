@@ -1,13 +1,15 @@
-import React from 'react';
 import { Select } from 'antd';
 import ChartCustom from '@/modules/common/components/ChartCustom';
+import useResultPage from './hooks';
 
 type Props = {};
 
 const ResultPage = (props: Props) => {
-  const handleChange = (value: string) => {
-    console.log(`selected ${value}`);
-  };
+  const { handleSelectYear, isLoading, raceResults, dataResultChart, labelResultChart } = useResultPage();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className="tw-px-10">
@@ -18,7 +20,7 @@ const ResultPage = (props: Props) => {
           <Select
             defaultValue="1952"
             style={{ width: 150 }}
-            onChange={handleChange}
+            onChange={handleSelectYear}
             options={[
               { value: '1952', label: '1952' },
               { value: '1951', label: '1951' },
@@ -31,22 +33,32 @@ const ResultPage = (props: Props) => {
             type="bar"
             data={{
               // TODO : FETCH RACE's NAME
-              labels: ['a', 'b'],
+              labels: labelResultChart,
               datasets: [
                 {
-                  label: 'API',
-                  data: [5, 6, 7, 3, 1, 4, 6, 1, 4, 10, 4, 2, 4],
+                  label: 'Country',
+                  data: dataResultChart,
                   fill: false,
-                  borderColor: 'rgb(101, 98, 174)',
-                  backgroundColor: 'rgb(101, 98, 174)',
+                  backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)',
+                  ],
+                  borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)',
+                  ],
                 },
-                {
-                  label: 'Total Message',
-                  data: [3, 2, 1],
-                  fill: false,
-                  borderColor: '#97BE63',
-                  backgroundColor: '#97BE63',
-                },
+
               ],
             }}
           />
