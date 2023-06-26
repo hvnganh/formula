@@ -22,7 +22,7 @@ const TeamCard = ({
       <div className="tw-flex tw-items-center tw-justify-between tw-border-y tw-border-gray-300 tw-py-3 tw-my-3">
         <span>{teamName}</span>
         <div>
-          <img src={teamImg} alt={teamName} />
+          <img width={50} height={50} src={teamImg} alt={teamName} />
         </div>
       </div>
       <div className="tw-grid tw-grid-cols-2 tw-gap-4 tw-border-b tw-border-gray-300 tw-pb-3 tw-mb-3">
@@ -32,7 +32,7 @@ const TeamCard = ({
               <span>{driver.firstName}</span>
               <span>{driver.lastName}</span>
             </div>
-            <img src={driver.imgDriver} alt={`${driver.firstName} ${driver.lastName}`} />
+            <img width={48} height={48} src={driver.imgDriver} alt={`${driver.firstName} ${driver.lastName}`} />
           </div>
           ))}
       </div>

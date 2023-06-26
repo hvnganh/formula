@@ -28,7 +28,7 @@ const DriverCard = ({
           <span>{lastName}</span>
         </div>
         <div>
-          <img src={flagImg} alt="Flag" />
+          <img width={46} height={30} src={flagImg} alt="Flag" />
         </div>
       </div>
       <div>
