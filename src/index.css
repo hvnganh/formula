@@ -26,4 +26,9 @@
     .card__border {
         @apply tw-border-2 border-radius-top-right-corner tw-border-black tw-border-l-0 tw-border-b-0 tw-pt-4 tw-pr-4
     }
+
+    .card__border:hover {
+        @apply tw-cursor-pointer tw-border-primary tw-transition-all tw-duration-300
+    }
+
 }

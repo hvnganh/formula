@@ -4,8 +4,8 @@ declare global {
     type TeamCardType = {
         rank: string;
         points: string;
-        carBrand: string;
-        imgBrand: string;
+        teamName: string;
+        teamImg: string;
         drivers: Array<{
             firstName: string;
             lastName: string;

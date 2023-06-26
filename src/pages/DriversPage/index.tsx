@@ -14,7 +14,7 @@ const DriversPage = (props: Props) => (
     </div>
     <div className="tw-grid tw-grid-cols-3 tw-gap-4">
       {/* CARD */}
-      <DriverCard />
+      {/* <DriverCard /> */}
 
     </div>
   </div>
