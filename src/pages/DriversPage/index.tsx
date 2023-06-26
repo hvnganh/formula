@@ -12,9 +12,10 @@ const DriversPage = (props: Props) => (
         Follow your favourite F1 drivers on and off the track.
       </h2>
     </div>
-    <div className="tw-grid tw-grid-cols-3">
+    <div className="tw-grid tw-grid-cols-3 tw-gap-4">
       {/* CARD */}
       <DriverCard />
+
     </div>
   </div>
   );
