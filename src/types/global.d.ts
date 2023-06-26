@@ -1,7 +1,7 @@
 export {};
 
 declare global {
-    type TeamCard = {
+    type TeamCardType = {
         rank: string;
         points: string;
         carBrand: string;
@@ -14,7 +14,7 @@ declare global {
         carSlug: string;
     }
 
-    type DriverCard = {
+    type DriverCardType = {
         rank: string;
         points: string;
         firstName: string;
@@ -26,7 +26,7 @@ declare global {
         numberImg: string;
     }
 
-    type TeamDetail = {
+    type TeamDetailType = {
         teamDetail: {
             fullteamname: string;
             base: string;
@@ -49,7 +49,7 @@ declare global {
         listParagraph: Array<string>;
     }
 
-    type DriverDetail = {
+    type DriverDetailType = {
         driverImg: string;
         driverNumber: string;
         driverFullName: string;
@@ -68,7 +68,7 @@ declare global {
         listParagraph: Array<string>;
     }
 
-    type ResultOfTheYear = {
+    type ResultOfTheYearType = {
         grandprix: string;
         date: string;
         winner: string;
