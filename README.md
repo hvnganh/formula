@@ -62,6 +62,8 @@ type ResultOfTheYearType = {
 ![1](https://github.com/hvnganh/vrillar-test/assets/102368559/42e338ce-8bf8-4311-8973-feddbd2d905c)
 ![2](https://github.com/hvnganh/vrillar-test/assets/102368559/0e413851-a952-437a-bdee-cc2eb43a6b29)
 ![4](https://github.com/hvnganh/vrillar-test/assets/102368559/f2eb7487-1f00-48db-9238-3347410c2875)
+![3](https://github.com/hvnganh/vrillar-test/assets/102368559/683dff97-41a8-4367-8d27-b3df7f1b1b88)
+
 
 2. Team Page
 - Call 'https://formula-1-api.onrender.com/teams' GET Method will receive ALL TEAMS
