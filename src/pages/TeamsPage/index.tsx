@@ -1,14 +1,12 @@
 import SearchOutlined from '@ant-design/icons/SearchOutlined';
 import TeamCard from './components/TeamCard';
 import useTeamPage from './hooks';
+import CartSkeleton from '@/modules/skeleton/CardSkeleton';
+import { repeat } from '@/lib/utils/repeat';
 
-type Props = {}
-
-const TeamsPage = (props: Props) => {
+const TeamsPage = () => {
   const { isLoading, searchListTeam, handleSearchInput } = useTeamPage();
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+
   return (
     <div className="tw-px-10">
       <h1 className="tw-text-[42px] tw-font-bold">F1 TEAMS 2023</h1>
@@ -23,19 +21,23 @@ const TeamsPage = (props: Props) => {
         <input className="tw-px-3 tw-outline-none" placeholder="Search team by name" onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSearchInput(e)} />
       </div>
       <div className="tw-grid tw-grid-cols-2 tw-gap-4">
-        {/* CARD */}
-        {searchListTeam?.map((teams) => (
-          <TeamCard
-            carSlug={teams.carSlug}
-            drivers={teams.drivers}
-            points={teams.points}
-            rank={teams.rank}
-            teamImg={teams.teamImg}
-            teamName={teams.teamName}
-            key={teams.teamImg}
-          />
-
-      ))}
+        {isLoading ? (
+          repeat(4).map((index) => (
+            <div key={index}><CartSkeleton /></div>
+          ))
+        ) : (
+          searchListTeam?.map((teams) => (
+            <TeamCard
+              carSlug={teams.carSlug}
+              drivers={teams.drivers}
+              points={teams.points}
+              rank={teams.rank}
+              teamImg={teams.teamImg}
+              teamName={teams.teamName}
+              key={teams.teamImg}
+            />
+        ))
+        )}
       </div>
     </div>
   );
