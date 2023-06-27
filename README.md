@@ -2,15 +2,31 @@
 
 In the project directory, you can run:
 
-### `npm install`
+### `yarn`
 
-### `npm dev`
+### `yarn dev`
 
 Runs the app in the development mode.\
-Open [http://localhost:5173](http://localhost:5173) to view it in your browser.
+Open [http://127.0.0.1:5173/](http://127.0.0.1:5173/) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+<!-- Processment -->
+
+## 1. Verify requirement
+1. Create a server to crawl data from (formula1.com)
+2. Create an application by using Typescript/React
+- Implement UI ( Information details, Chart, Table )
+- Implement feature Search/Filter/Sort based on data from the server
+
+## 2. Create tasks to implement
+![image](https://github.com/hvnganh/vrillar-test/assets/102368559/d25d04d8-5e39-423e-af0c-c01d1c0c760e)
+
+## 3. Create branches based on the task's feature
+- Implement task's features relate to the branch
+- Control marge/pull requests in source code
+- Commit message follows the pattern. Ex: feature "feat: implement search feature",...
 
 <!-- Folder structure -->
 
