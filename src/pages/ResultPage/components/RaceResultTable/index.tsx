@@ -46,6 +46,8 @@ const RaceResultTable = ({ raceResults, isLoading }: RaceResultTableProps) => {
             title: 'TIME',
             dataIndex: 'time',
             key: 'time',
+            defaultSortOrder: 'descend',
+            sorter: (a, b) => +a.time.split(':').join('') - +b.time.split(':').join(''),
         },
     ];
 

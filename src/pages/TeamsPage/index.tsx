@@ -1,10 +1,11 @@
+import SearchOutlined from '@ant-design/icons/SearchOutlined';
 import TeamCard from './components/TeamCard';
 import useTeamPage from './hooks';
 
 type Props = {}
 
 const TeamsPage = (props: Props) => {
-  const { isLoading, listTeam } = useTeamPage();
+  const { isLoading, searchListTeam, handleSearchInput } = useTeamPage();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -17,9 +18,13 @@ const TeamsPage = (props: Props) => {
           podium finishes, points earned and championship titles.
         </h2>
       </div>
+      <div className="tw-mb-4 tw-flex tw-items-center tw-border tw-border-gray-300 tw-rounded-full tw-w-fit tw-overflow-hidden">
+        <SearchOutlined className="tw-p-2 tw-border-r tw-border-gray-300" />
+        <input className="tw-px-3 tw-outline-none" placeholder="Search team by name" onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSearchInput(e)} />
+      </div>
       <div className="tw-grid tw-grid-cols-2 tw-gap-4">
         {/* CARD */}
-        {listTeam?.map((teams) => (
+        {searchListTeam?.map((teams) => (
           <TeamCard
             carSlug={teams.carSlug}
             drivers={teams.drivers}
