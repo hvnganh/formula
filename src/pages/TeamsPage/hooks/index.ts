@@ -12,7 +12,8 @@ const useTeamPage = () => {
 
   const searchListTeam = listTeam?.filter((team) => {
           if (searchValue !== '') {
-              return team.teamName.toLowerCase().split(' ').includes(searchValue);
+              return team.teamName.toLowerCase().split(' ').includes(searchValue.toLowerCase())
+              || team.teamName.toLowerCase().includes(searchValue.toLowerCase());
           }
           return team;
       });
