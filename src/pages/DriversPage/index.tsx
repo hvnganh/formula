@@ -1,11 +1,11 @@
-import React from 'react';
+import SearchOutlined from '@ant-design/icons/SearchOutlined';
 import DriverCard from './components/DriverCard';
 import useDriverPage from './hooks';
 
 type Props = {}
 
 const DriversPage = (props: Props) => {
-  const { isLoading, listDriver } = useDriverPage();
+  const { isLoading, searchListDriver, handleSearchInput } = useDriverPage();
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -18,9 +18,13 @@ const DriversPage = (props: Props) => {
           Follow your favourite F1 drivers on and off the track.
         </h2>
       </div>
+      <div className="tw-mb-4 tw-flex tw-items-center tw-border tw-border-gray-300 tw-rounded-full tw-w-fit tw-overflow-hidden">
+        <SearchOutlined className="tw-p-2 tw-border-r tw-border-gray-300" />
+        <input className="tw-px-3 tw-outline-none" placeholder="Search driver by name" onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSearchInput(e)} />
+      </div>
       <div className="tw-grid tw-grid-cols-3 tw-gap-4">
         {/* CARD */}
-        {listDriver?.map((drivers) => (
+        {searchListDriver?.map((drivers) => (
           <DriverCard
             driverImg={drivers.driverImg}
             firstName={drivers.firstName}
