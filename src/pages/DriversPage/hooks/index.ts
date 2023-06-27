@@ -11,7 +11,8 @@ const useDriverPage = () => {
 
     const searchListDriver = listDriver?.filter((driver) => {
         if (searchValue !== '') {
-            return driver.nameSlug.toLowerCase().split('-').includes(searchValue);
+            return driver.nameSlug.toLowerCase().split('-').includes(searchValue.toLowerCase())
+            || driver.nameSlug.toLowerCase().includes(searchValue.toLowerCase());
         }
         return driver;
     });
