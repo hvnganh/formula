@@ -1,4 +1,5 @@
 import ChartCustom from '@/modules/common/components/ChartCustom';
+import ChartSkeleton from '@/modules/skeleton/ChartSkeleton';
 
 type RaceResultChartProps = {
   labelResultChart: string[];
@@ -14,7 +15,9 @@ const RaceResultChart = ({
   isLoading,
 }: RaceResultChartProps) =>
   isLoading ? (
-    <div>Loading</div>
+    <div>
+      <ChartSkeleton />
+    </div>
   ) : (
     <ChartCustom
       raceResultsData={raceResultsData}
