@@ -30,12 +30,14 @@ ChartJS.register(
 
 type ChartCustomProps = {
   customClass?: string;
+  raceResultsData?: ResultOfTheYearType[];
 } & ChartProps;
 
 function ChartCustom({
   customClass,
   data,
   type = 'bar',
+  raceResultsData = [],
   ...props
 }: ChartCustomProps) {
   /**
@@ -63,7 +65,12 @@ function ChartCustom({
         footerColor: '#000',
         callbacks: {
           afterBody(tooltipItem) {
-            return '';
+            // eslint-disable-next-line no-unreachable-loop
+            for (let i = 0; i < raceResultsData.length; i++) {
+              return `Winner: ${raceResultsData[i].winner}
+Date: ${raceResultsData[i].date}
+Car: ${raceResultsData[i].car}`;
+            }
           },
         },
       },
