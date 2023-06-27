@@ -13,8 +13,10 @@ const useResultPage = () => {
     queryFn: () => getResultByYear(year),
   });
 
-  const labelResultChart = raceResults?.map((result) => result.grandprix);
-  const dataResultChart = raceResults?.map((result) => Number(result.time.split(':').join(''))) as any;
+  const arrayAfterRemoveEmptyResult = raceResults?.filter((result) => Number(result.time) !== 0);
+
+  const labelResultChart = arrayAfterRemoveEmptyResult?.map((result) => result.grandprix);
+  const dataResultChart = arrayAfterRemoveEmptyResult?.map((result) => result.time.split(':').slice(0, 2).join('.')).filter((time) => Number(time) !== 0) as any;
 
   return {
     handleSelectYear,
