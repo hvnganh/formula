@@ -32,7 +32,7 @@ You may also see any lint errors in the console.
 ## 4. Pick libraries to support coding
 - Control source code: Eslint, prettier
 - Build tool: Vite
-- Fetch server's data: react-query
+- Fetch server's data: react-query ( Cache data response, loading state )
 - Chart: chart.js, react-chartjs-2
 - UI lib: ant design
 - State routing: react-router-dom
