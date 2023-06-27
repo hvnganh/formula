@@ -57,6 +57,7 @@ type ResultOfTheYearType = {
     }
 ```
 - UI: Display data on Table and Chart
+- Feature: Sort time asc and desc
 - Skeleton loading when waiting for response from server
 
 ![1](https://github.com/hvnganh/vrillar-test/assets/102368559/42e338ce-8bf8-4311-8973-feddbd2d905c)
