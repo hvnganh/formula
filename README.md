@@ -2,6 +2,8 @@
 
 In the project directory, you can run:
 
+### `cp .env.template .env`
+
 ### `yarn`
 
 ### `yarn dev`
