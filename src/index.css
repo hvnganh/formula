@@ -38,4 +38,9 @@
     .information__detail > span:first-child {
         @apply tw-font-bold
     }
+
+    .custom-table > .ant-spin-nested-loading > .ant-spin-container > .ant-table {
+        @apply tw-min-h-[500px]
+    }
+
 }

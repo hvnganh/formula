@@ -5,7 +5,7 @@ import { getAllTeam } from '@/lib/services';
 const useTeamPage = () => {
   const [searchValue, setSearchValue] = useState('');
 
-  const { data: listTeam, isLoading } = useQuery<Array<TeamCardType>>({
+  const { data: listTeam, isLoading, isError } = useQuery<Array<TeamCardType>>({
     queryKey: 'list-team',
     queryFn: () => getAllTeam(),
   });
@@ -23,6 +23,7 @@ const useTeamPage = () => {
   };
 
   return {
+    isError,
     listTeam,
     searchListTeam,
     isLoading,

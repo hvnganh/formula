@@ -3,15 +3,16 @@ import ArrowLeftOutlined from '@ant-design/icons/ArrowLeftOutlined';
 import { Fragment } from 'react';
 import useTeamDetailPage from './hooks';
 import { splitPathNameDetailPage } from '@/lib/utils/splitPathNameDetailPage';
+import PageDetailSkeleton from '@/modules/skeleton/PageDetailSkeleton';
 
 type Props = {}
 
 const TeamsDetailPage = (props: Props) => {
   const { pathname } = useLocation();
-  const { teamInformation, listParagraph, listYear, isLoading } = useTeamDetailPage(splitPathNameDetailPage(pathname));
+  const { teamInformation, listParagraph, listYear, isLoading, isError } = useTeamDetailPage(splitPathNameDetailPage(pathname));
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  if (isLoading || isError) {
+    return <div><PageDetailSkeleton /></div>;
   }
 
   return (

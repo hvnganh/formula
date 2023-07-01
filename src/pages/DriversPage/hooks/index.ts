@@ -4,7 +4,7 @@ import { getAllDriver } from '@/lib/services';
 
 const useDriverPage = () => {
     const [searchValue, setSearchValue] = useState('');
-    const { data: listDriver, isLoading } = useQuery<Array<DriverCardType>>({
+    const { data: listDriver, isLoading, isError } = useQuery<Array<DriverCardType>>({
         queryKey: 'list-driver',
         queryFn: () => getAllDriver(),
     });
@@ -22,6 +22,7 @@ const useDriverPage = () => {
       };
 
     return {
+        isError,
         listDriver,
         isLoading,
         searchListDriver,
