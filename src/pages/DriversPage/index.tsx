@@ -1,11 +1,11 @@
 import SearchOutlined from '@ant-design/icons/SearchOutlined';
 import DriverCard from './components/DriverCard';
 import useDriverPage from './hooks';
-import CartSkeleton from '@/modules/skeleton/CardSkeleton';
+import CardSkeleton from '@/modules/skeleton/CardSkeleton';
 import { repeat } from '@/lib/utils/repeat';
 
 const DriversPage = () => {
-  const { isLoading, searchListDriver, handleSearchInput } = useDriverPage();
+  const { isLoading, searchListDriver, handleSearchInput, isError } = useDriverPage();
   return (
     <div className="tw-px-10">
       <h1 className="tw-text-[42px] tw-font-bold">F1 DRIVERS 2023</h1>
@@ -27,10 +27,10 @@ const DriversPage = () => {
         />
       </div>
       <div className="tw-grid tw-grid-cols-3 tw-gap-4">
-        {isLoading
+        {isLoading || isError
           ? repeat(6).map((index) => (
             <div key={index}>
-              <CartSkeleton />
+              <CardSkeleton />
             </div>
             ))
           : searchListDriver?.map((drivers) => (

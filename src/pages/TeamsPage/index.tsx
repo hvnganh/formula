@@ -1,11 +1,11 @@
 import SearchOutlined from '@ant-design/icons/SearchOutlined';
 import TeamCard from './components/TeamCard';
 import useTeamPage from './hooks';
-import CartSkeleton from '@/modules/skeleton/CardSkeleton';
+import CardSkeleton from '@/modules/skeleton/CardSkeleton';
 import { repeat } from '@/lib/utils/repeat';
 
 const TeamsPage = () => {
-  const { isLoading, searchListTeam, handleSearchInput } = useTeamPage();
+  const { isLoading, searchListTeam, handleSearchInput, isError } = useTeamPage();
 
   return (
     <div className="tw-px-10">
@@ -21,9 +21,9 @@ const TeamsPage = () => {
         <input className="tw-px-3 tw-outline-none" placeholder="Search team by name" onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSearchInput(e)} />
       </div>
       <div className="tw-grid tw-grid-cols-2 tw-gap-4">
-        {isLoading ? (
+        {isLoading || isError ? (
           repeat(4).map((index) => (
-            <div key={index}><CartSkeleton /></div>
+            <div key={index}><CardSkeleton /></div>
           ))
         ) : (
           searchListTeam?.map((teams) => (

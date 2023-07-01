@@ -3,7 +3,7 @@ import { getTeamDetail } from '@/lib/services';
 import { transformNumberArray } from '@/lib/utils/transformNumberArray';
 
 const useTeamDetailPage = (teamName = '') => {
-    const { data: teamInformation, isLoading } = useQuery<TeamDetailType>({
+    const { data: teamInformation, isLoading, isError } = useQuery<TeamDetailType>({
         queryKey: ['team-detail', teamName],
         queryFn: () => getTeamDetail(teamName),
     });
@@ -12,6 +12,7 @@ const useTeamDetailPage = (teamName = '') => {
     const listParagraph = teamInformation?.listParagraph.slice(1) ?? [];
 
     return {
+        isError,
         teamInformation,
         listYear,
         listParagraph,

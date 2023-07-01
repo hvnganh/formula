@@ -3,13 +3,14 @@ import { Link, useLocation } from 'react-router-dom';
 import ArrowLeftOutlined from '@ant-design/icons/ArrowLeftOutlined';
 import useDriverDetailPage from './hooks';
 import { splitPathNameDetailPage } from '@/lib/utils/splitPathNameDetailPage';
+import PageDetailSkeleton from '@/modules/skeleton/PageDetailSkeleton';
 
 const DriverDetailPage = () => {
   const { pathname } = useLocation();
-  const { driverInformation, isLoading } = useDriverDetailPage(splitPathNameDetailPage(pathname));
+  const { driverInformation, isLoading, isError } = useDriverDetailPage(splitPathNameDetailPage(pathname));
 
-  if (isLoading) {
-    return <div>Loading...</div>;
+  if (isLoading || isError) {
+    return <div><PageDetailSkeleton /></div>;
   }
 
   return (
