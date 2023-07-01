@@ -1,5 +1,6 @@
 import type { ColumnsType } from 'antd/es/table';
 import { Table } from 'antd';
+import { CONTENT_TABLE_HEIGHT } from '@/lib/constants';
 
 type RaceResultTableProps = {
     raceResults: ResultOfTheYearType[];
@@ -61,7 +62,14 @@ const RaceResultTable = ({ raceResults, isLoading }: RaceResultTableProps) => {
         key: result.time,
     }));
     return (
-      <Table columns={columns} dataSource={data} bordered className="tw-capitalize" loading={isLoading} />
+      <Table
+        columns={columns}
+        dataSource={data}
+        bordered
+        scroll={{ y: CONTENT_TABLE_HEIGHT }}
+        className="tw-capitalize custom-table"
+        loading={isLoading}
+      />
   );
 };
 
