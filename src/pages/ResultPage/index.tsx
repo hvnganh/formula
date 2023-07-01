@@ -6,6 +6,8 @@ import RaceResultChart from './components/RaceResultChart';
 const ResultPage = () => {
   const { handleSelectYear,
     isLoading,
+    currentYear,
+    selectListYears,
     raceResults,
     dataResultChart,
     labelResultChart,
@@ -36,14 +38,10 @@ const ResultPage = () => {
         <div className="tw-flex tw-items-center">
           <p className="tw-mr-3">Please select year:</p>
           <Select
-            defaultValue="1952"
+            defaultValue={currentYear.toString()}
             style={{ width: 150 }}
             onChange={handleSelectYear}
-            options={[
-              { value: '1952', label: '1952' },
-              { value: '1951', label: '1951' },
-              { value: '1950', label: '1950' },
-            ]}
+            options={selectListYears}
           />
         </div>
         <div>
