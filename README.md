@@ -17,21 +17,18 @@ You may also see any lint errors in the console.
 # Description
 <!-- Processment -->
 
-## 1. Verify requirement
+## 1. Verify features
 1. Create a server to crawl data from (formula1.com)
 2. Create an application by using Typescript/React
 - Implement UI ( Information details, Chart, Table )
 - Implement feature Search/Filter/Sort based on data from the server
 
-## 2. Create tasks to implement
-![image](https://github.com/hvnganh/vrillar-test/assets/102368559/d25d04d8-5e39-423e-af0c-c01d1c0c760e)
-
-## 3. Create branches based on the task's feature
-- Implement task's features relate to the branch
+## 2. Create branches based on the task's feature
+- Implement task features relate to the branch
 - Control marge/pull requests in source code
 - Commit message follows the pattern. Ex: feature "feat: implement search feature",...
 
-## 4. Pick libraries to support coding
+## 3. Pick libraries to support coding
 - Control source code: Eslint, prettier
 - Build tool: Vite
 - Fetch server's data: react-query ( Cache data response, loading state )
